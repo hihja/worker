@@ -76,7 +76,7 @@ const Header: FC = () => {
                         <div className={styles.burger__menu}>
                             <ul className={styles.navigation__burger}>
                                 <li><Link href={'/job-posting'} className={styles.burger__item} onClick={handleBurger}>Разместить вакансию</Link></li>
-                                <li><Link href={'/'} className={styles.burger__item} onClick={handleBurger}>О сервисе</Link></li>
+                                <li><Link href={'/about-us'} className={styles.burger__item} onClick={handleBurger}>О сервисе</Link></li>
                                 <li><Link href={'/'} className={styles.burger__item} onClick={handleBurger}>Тарифы</Link></li>
                             </ul>
                         </div>
