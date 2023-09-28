@@ -8,7 +8,7 @@ import Link from "next/link";
 import styles from '../assets/styles/header.module.scss'
 import AuthPopup from "@/components/popup/AuthPopup";
 import {useModal} from "@/components/providers/ModalContext";
-import {rotate} from "next/dist/server/lib/squoosh/impl";
+
 
 const Header: FC = () => {
     const { showModal } = useModal();
@@ -50,7 +50,7 @@ const Header: FC = () => {
                             <nav className={styles.navigation}>
                                 <ul className={styles.navigation__menu}>
                                     <li><Link href={'/job-posting'} className={styles.item}>Разместить вакансию</Link></li>
-                                    <li><Link href={'/'} className={styles.item}>О сервисе</Link></li>
+                                    <li><Link href={'/about-us'} className={styles.item}>О сервисе</Link></li>
                                     <li><Link href={'/'} className={styles.item}>Тарифы</Link></li>
                                 </ul>
                             </nav>
@@ -74,11 +74,11 @@ const Header: FC = () => {
                 {
                     isOpen && (
                         <div className={styles.burger__menu}>
-                            {/*<ul className={styles.navigation__burger}>*/}
-                            {/*    <li><Link href={'/job-posting'} className={styles.burger__item} onClick={handleBurger}>Разместить вакансию</Link></li>*/}
-                            {/*    <li><Link href={'/'} className={styles.burger__item} onClick={handleBurger}>О сервисе</Link></li>*/}
-                            {/*    <li><Link href={'/'} className={styles.burger__item} onClick={handleBurger}>Тарифы</Link></li>*/}
-                            {/*</ul>*/}
+                            <ul className={styles.navigation__burger}>
+                                <li><Link href={'/job-posting'} className={styles.burger__item} onClick={handleBurger}>Разместить вакансию</Link></li>
+                                <li><Link href={'/'} className={styles.burger__item} onClick={handleBurger}>О сервисе</Link></li>
+                                <li><Link href={'/'} className={styles.burger__item} onClick={handleBurger}>Тарифы</Link></li>
+                            </ul>
                         </div>
                     )
                 }

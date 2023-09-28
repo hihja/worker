@@ -16,7 +16,7 @@ const data:ITarrif[] = [
     {id: 3, title: "Персональный HR", price: "10 000", items: ["согласование текста вакансии с менеджером Исполнителя", "поиск и подбор сотрудников менеджером исполнителя", "предоставление проверенных анкет Заказчику", "трудоустройство соискателей в штат Клиента", "гарантия результата"]},
 ]
 
-const Tarrifs: FC<ITarrif> = () => {
+const Tarrifs: FC = () => {
     return (
         <div className={styles.tarrifs}>
             <div className={styles.tarrifs__content}>

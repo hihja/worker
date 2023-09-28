@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from "@/assets/styles/start.module.scss"
 import Button from "@/components/ui/Button/Button";
 
-const HeroStart: FC = () => {
+const heroStart: FC = () => {
     return (
         <div className={styles.start}>
             <div className={styles.start__content}>
@@ -28,4 +28,4 @@ const HeroStart: FC = () => {
     )
 }
 
-export default HeroStart
+export default heroStart

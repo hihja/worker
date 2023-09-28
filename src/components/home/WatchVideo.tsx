@@ -5,7 +5,11 @@ import preview from "@/assets/images/Rectangle 48.png"
 import Image from "next/image";
 import {FiPlay} from "react-icons/fi"
 
-const WatchVideo: FC = ({title}) => {
+interface IVideo {
+    title?: boolean
+}
+
+const WatchVideo: FC<IVideo> = ({title}) => {
     return (
         <div className={styles.watch_video}>
             <div className={styles.watch__content}>

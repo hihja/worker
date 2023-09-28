@@ -1,6 +1,11 @@
 import {FC} from "react";
 import styles from "@/assets/styles/ui/select.module.scss"
-const Select: FC = ({values, label}) => {
+
+interface ISelect {
+    values: string[]
+    label?: string
+}
+const Select: FC<ISelect> = ({values, label}) => {
     return (
         <div className={styles.select}>
             <label className={styles.select__content}>

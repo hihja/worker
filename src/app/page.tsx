@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import HeroStart from "@/components/Home/HeroStart";
+import HeroStart from "@/components/home/heroStart";
 import WatchVideo from "@/components/home/WatchVideo";
 import Benefits from "@/components/home/Benefits";
 import Tarrifs from "@/components/home/Tarrifs";
@@ -13,7 +13,7 @@ export default function Home() {
         <Header/>
         <main>
             <HeroStart/>
-            <WatchVideo/>
+            <WatchVideo title={true}/>
             <Benefits/>
             <Tarrifs/>
             <Faq/>

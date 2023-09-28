@@ -3,13 +3,13 @@ import styles from "@/assets/styles/ui/popup.module.scss";
 
 type ModalProps = {
     isOpen: boolean;
-    title?: string;
     onClose: () => void;
+    title?: string;
+    children: React.ReactNode; // Убедитесь, что это свойство присутствует
 };
 
-const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
-    if (!isOpen) return null;
 
+const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
     const [isAnimating, setIsAnimating] = useState(false);
 
     useEffect(() => {
@@ -18,12 +18,19 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
         }
     }, [isOpen]);
 
+    useEffect(() => {
+        if (!isOpen) {
+            setIsAnimating(false);
+        }
+    }, [isOpen]);
+
     const handleOverlayClick = (e: React.MouseEvent) => {
         if (e.target === e.currentTarget) {
-            setIsAnimating(false);
             onClose();
         }
     };
+
+    if (!isOpen) return null;
 
     return (
         <div className={`${styles.popup__overlay} ${isAnimating ? styles.active__overlay : ""}`} onClick={handleOverlayClick}>

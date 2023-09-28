@@ -1,7 +1,11 @@
 import {FC} from "react";
 import styles from "@/assets/styles/ui/input.module.scss";
 
-const Input: FC = ({placeholder, label}) => {
+interface IInput {
+    placeholder?: string
+    label?: string
+}
+const Input: FC<IInput> = ({placeholder, label}) => {
     return (
         <div className={styles.input__container}>
             <label>

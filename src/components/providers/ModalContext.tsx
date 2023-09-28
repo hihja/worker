@@ -2,31 +2,26 @@
 import { createContext, useContext, ReactNode, useState } from "react";
 import Modal from "@/components/ui/Popup/PopupModal";
 
+
 type ModalContextType = {
-    showModal: (content: React.ReactNode, авторизация: string) => void;
+    showModal: (content: ReactNode, title?: string) => void;
     hideModal: () => void;
 };
 
 const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
-// В ModalProvider.tsx
-type ModalContextType = {
-    showModal: (content: ReactNode, title?: string) => void; // Добавьте title в параметры
-    hideModal: () => void;
-};
-
-export const ModalProvider: React.FC = ({ children }) => {
+export const ModalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     const [modalContent, setModalContent] = useState<ReactNode | null>(null);
-    const [modalTitle, setModalTitle] = useState<string | null>(null); // Добавьте состояние для title
+    const [modalTitle, setModalTitle] = useState<string | undefined>(undefined);
 
     const showModal = (content: ReactNode, title?: string) => {
         setModalContent(content);
-        setModalTitle(title); // Установите переданный title
+        setModalTitle(title);
     };
 
     const hideModal = () => {
         setModalContent(null);
-        setModalTitle(null); // Сбросьте title при скрытии модального окна
+        setModalTitle(undefined);
     };
 
     return (
@@ -36,6 +31,7 @@ export const ModalProvider: React.FC = ({ children }) => {
         </ModalContext.Provider>
     );
 };
+
 export const useModal = () => {
     const context = useContext(ModalContext);
     if (!context) {

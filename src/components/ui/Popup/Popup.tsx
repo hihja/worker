@@ -5,6 +5,7 @@ interface IPopupProps {
     isOpen: boolean;
     onClose: () => void;
     title: string
+    children: React.ReactNode;
 }
 
 const Popup: FC<IPopupProps> = ({ isOpen, onClose, title, children }) => {

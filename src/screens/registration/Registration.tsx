@@ -2,15 +2,13 @@
 import {FC, useState} from "react";
 import styles from "@/assets/styles/registration.module.scss"
 import Input from "@/components/ui/Input/Input";
-import Select from "@/components/ui/Select/Select";
-import Textarea from "@/components/ui/Textarea/Textarea";
+
 import Button from "@/components/ui/Button/Button";
 
 const Registration: FC = () => {
-    const [regType, setRegType] = useState(1);
     const [selectedMethod, setSelectedMethod] = useState(1);
 
-    const handleClick = (id) => {
+    const handleClick = (id: number) => {
         setSelectedMethod(id);
     }
 
