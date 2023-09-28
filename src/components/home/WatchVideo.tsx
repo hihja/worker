@@ -14,7 +14,7 @@ const WatchVideo: FC<IVideo> = ({title}) => {
         <div className={styles.watch_video}>
             <div className={styles.watch__content}>
                 {
-                    !title && (
+                    title && (
                         <h3 className={styles.title}>Посмотрите короткое видео о нашей работе</h3>
 
                     )
