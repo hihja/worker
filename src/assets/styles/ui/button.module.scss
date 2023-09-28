@@ -1,0 +1,32 @@
+@import "../variables";
+
+.button {
+  outline: none;
+  border: 1px solid $primary;
+  padding: 8px 20px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  font-weight: 400;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.button__primary {
+  color: $white;
+  background: $primary;
+  &:hover {
+    background: $primary_hover;
+    border-color: $primary_hover;
+  }
+}
+
+.button__secondary {
+  color: $primary;
+  background: $white;
+
+  &:hover {
+    background: $primary;
+    color: $white;
+  }
+}

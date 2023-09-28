@@ -1,0 +1,44 @@
+@import "../variables";
+
+.textarea {
+  .textarea__content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 5px;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 600;
+
+    label {
+      display: flex;
+      flex-direction: column;
+      grid-gap: 5px;
+    }
+    textarea {
+      border-radius: 6px;
+      background: $white;
+      border: 1px solid $tarrifs_border;
+      color: $black;
+      font-size: 14px;
+      font-weight: 400;
+      padding: 10px 12px;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+      outline: none;
+      width: 100%;
+      max-width: 688px;
+      min-height: 90px;
+
+      @media (max-width: 500px) {
+        width: auto;
+      }
+
+      ::placeholder {
+        opacity: 0.5;
+      }
+
+      &:focus {
+        border-color: $primary;
+      }
+    }
+  }
+}

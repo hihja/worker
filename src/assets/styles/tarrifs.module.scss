@@ -1,0 +1,104 @@
+@import "variables";
+@import "responsive";
+
+.tarrifs {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media (max-width: 768px) {
+    padding-top: 0px;
+    padding-bottom: 30px;
+  }
+
+  .tarrifs__content {
+    max-width: 1140px;
+    width: 100%;
+    @media (max-width: 1180px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .tarrifs__items {
+      display: flex;
+      margin-top: 30px;
+      width: 100%;
+      grid-gap: 60px;
+      @media (max-width: 1180px) {
+        grid-gap: 20px;
+      }
+      @media (max-width: 990px) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .tarrifs__item {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 25px;
+        width: 100%;
+        background: $tarrifs;
+        border-radius: 6px;
+        border-bottom: 3px solid $tarrifs_border;
+        transition: all 0.5s ease;
+        padding: 24px;
+        max-width: 356px;
+        @media (max-width: 990px) {
+          max-width: 100%;
+        }
+        .tarrifs__title {
+          display: flex;
+          flex-direction: column;
+          grid-gap: 10px;
+          min-height: 65px;
+
+
+          .tarrif__price {
+            font-size: 30px;
+            font-weight: 400;
+          }
+
+          .tarrif__title {
+            font-weight: 600;
+            line-height: 1.4;
+            font-size: 15px;
+            color: $primary;
+            text-transform: uppercase;
+          }
+        }
+        .tarrif__buttons {
+          display: flex;
+          justify-content: center;
+          grid-gap: 10px;
+          width: 100%;
+          align-items: flex-end;
+          height: 100%;
+          button {
+            width: 100%;
+          }
+        }
+        .tarrifs__list {
+          @media (max-width: 990px) {
+            display: flex;
+            flex-direction: column;
+          }
+          .list__item {
+            font-size: 0.9rem;
+            display: inline-flex;
+            grid-gap: 8px;
+            margin-bottom: 5px;
+            color: $muted;
+            .icon {
+              fill: $primary;
+              max-height: 20px;
+              max-width: 20px;
+              height: 100%;
+              width: 100%;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+@import "variables";
+
+.reset {
+  .desc {
+    color: $muted;
+    font-size: 17px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  button {
+    width: 100%;
+    margin-top: 20px;
+  }
+  .auth {
+    text-align: center;
+    margin-top: 20px;
+    cursor: pointer;
+    span {
+      font-weight: 600;
+    }
+  }
+}

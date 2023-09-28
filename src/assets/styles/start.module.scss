@@ -1,0 +1,135 @@
+@import "variables";
+@import "responsive";
+
+.start {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 180px;
+  padding-bottom: 180px;
+
+  @media (max-width: 1010px) {
+    background: $primary;
+    padding-top: 84px;
+    padding-bottom: 40px;
+  }
+
+  .start__content {
+    display: flex;
+    align-items: center;
+    max-width: 1140px;
+    width: 100%;
+
+    @media (max-width: 1180px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media (max-width: 1010px) {
+      flex-direction: column-reverse;
+      max-width: 640px;
+    }
+
+    .start__title {
+      font-weight: 600;
+      font-size: 38px;
+      letter-spacing: 0.5px;
+      line-height: 1.4;
+      max-width: 617px;
+      @media (max-width: 1010px) {
+        text-align: center;
+        padding-top: 30px;
+      }
+    }
+    .start__buttons {
+      display: flex;
+      max-width: 640px;
+      grid-gap: 10px;
+      margin-top: 30px;
+      a {
+        button {
+          width: 100%;
+        }
+      }
+      @media (max-width: 1010px) {
+        flex-direction: column;
+        button {
+          background: #fff;
+          color: $primary;
+        }
+      }
+    }
+
+    .start__count {
+      position: relative;
+      max-width: 475px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+
+      @media (max-width: 1010px) {
+        background: $white;
+        border-radius: 15px;
+        max-width: 617px;
+      }
+
+      .count__content {
+        @media (max-width: 1010px) {
+          padding: 14px 15px;
+          display: flex;
+          grid-gap: 5px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .count__title {
+          font-size: 18px;
+          color: $white;
+          max-width: 210px;
+          text-align: center;
+
+          @media (max-width: 1010px) {
+            font-size: 18px;
+            color: $black;
+            max-width: 100%;
+            font-weight: 400;
+          }
+        }
+        .count__value {
+          font-size: 62px;
+          font-weight: 700;
+          color: $white;
+
+          @media (max-width: 1010px) {
+            font-size: 20px;
+            color: $black;
+          }
+
+        }
+      }
+
+
+      &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        width: 60rem;
+        height: 60rem;
+        border-radius: 100%;
+        transform: translateY(-50%);
+        background: $primary;
+        top: 50%;
+        left: 0;
+        right: 0;
+
+        @media (max-width: 1010px) {
+          display: none;
+        }
+
+      }
+    }
+  }
+}

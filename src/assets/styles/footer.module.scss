@@ -1,0 +1,27 @@
+@import "variables";
+
+.footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: $footer;
+
+  .footer__content {
+    max-width: 1140px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 1180px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    span {
+      cursor: pointer;
+      color: $footer_phone;
+      font-size: 20px;
+    }
+  }
+}
