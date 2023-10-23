@@ -3,6 +3,8 @@ import './globals.scss'
 
 import {Inter, Nunito, Roboto} from 'next/font/google'
 import {ModalProvider} from "@/components/providers/ModalContext";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 
 const roboto = Roboto({
@@ -33,7 +35,11 @@ export default function RootLayout({
     <html lang="en">
       <body style={nunito.style}>
       <ModalProvider>
-        {children}
+          <Header/>
+            <main>
+                {children}
+            </main>
+          <Footer/>
       </ModalProvider>
       </body>
     </html>

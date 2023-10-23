@@ -18,14 +18,6 @@ const Header: FC = () => {
         showModal(<AuthPopup/>, "Авторизация");
     };
 
-    const handleBurger = () => {
-        if(isOpen) {
-            setOpen(false)
-        }else{
-            setOpen(true)
-        }
-    }
-
     const burgerFirstLine: CSSProperties = {
         transform: isOpen ? "rotate(-45deg)" : "none",
         transition: "transform 0.3s",
@@ -38,7 +30,6 @@ const Header: FC = () => {
     };
 
     return (
-        <>
             <header className={styles.header}>
                 <div className={styles.header__container}>
                     <Link className={styles.logo} href={'/'}>
@@ -65,7 +56,7 @@ const Header: FC = () => {
                                 </li>
                             </ul>
                         </div>
-                        <button className={styles.burger} onClick={handleBurger}>
+                        <button className={styles.burger} onClick={() => setOpen(!isOpen)}>
                             <span style={burgerFirstLine}></span>
                             <span style={burgerLastLine}></span>
                         </button>
@@ -75,17 +66,14 @@ const Header: FC = () => {
                     isOpen && (
                         <div className={styles.burger__menu}>
                             <ul className={styles.navigation__burger}>
-                                <li><Link href={'/job-posting'} className={styles.burger__item} onClick={handleBurger}>Разместить вакансию</Link></li>
-                                <li><Link href={'/about-us'} className={styles.burger__item} onClick={handleBurger}>О сервисе</Link></li>
-                                <li><Link href={'/'} className={styles.burger__item} onClick={handleBurger}>Тарифы</Link></li>
+                                <li><Link href={'/job-posting'} className={styles.burger__item} onClick={() => setOpen(!isOpen)}>Разместить вакансию</Link></li>
+                                <li><Link href={'/about-us'} className={styles.burger__item} onClick={() => setOpen(!isOpen)}>О сервисе</Link></li>
+                                <li><Link href={'/'} className={styles.burger__item} onClick={() => setOpen(!isOpen)}>Тарифы</Link></li>
                             </ul>
                         </div>
                     )
                 }
             </header>
-
-
-        </>
     )
 }
 
